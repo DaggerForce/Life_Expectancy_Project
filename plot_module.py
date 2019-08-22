@@ -88,7 +88,7 @@ def CorrMtx(df, dropDuplicates=True, xrot=70, yrot=0, label='Variable'):
     return
 
 
-def get_pairs(data, row_groups, depended, features, n, fig_name):
+def get_pairs(data, depended, features, n, fig_name=None):
     row_groups = [features[i:i+n] for i in range(0, len(features), n)]
     # create the plots
     for ind in row_groups:
