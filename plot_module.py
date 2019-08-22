@@ -17,7 +17,7 @@ def create_hist(data, transform=None, title=None, xlabel=None):
     elif transform == 'cube':
         data = np.cbrt(data)
     # create the plot
-    plt.figure(figsize=(6, 3))
+    plt.figure(figsize=(8, 5))
     plt.hist(data, density=True)
     # add the labels
     plt.title(title)
