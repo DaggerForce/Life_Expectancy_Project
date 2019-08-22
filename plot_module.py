@@ -94,7 +94,8 @@ def get_pairs(data, depended, features, n, fig_name=None):
     for ind in row_groups:
         plot = sns.pairplot(x_vars=ind, y_vars=depended,
                             data=data, kind="reg", height=3)
-        plt.savefig(f"{fig_name}_{ind}.png")
+        if fig_name:
+            plt.savefig(f"{fig_name}_{ind}.png")
     # save the file
 
     return
