@@ -1,3 +1,12 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import statsmodels.api as sm
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.preprocessing import StandardScaler
+
+
 def create_hist(data, transform=None, title=None, xlabel=None):
     '''This function creates an histogram. It can also accept transformation method to 
        create a histogram after the transoformation ('log', 'sqrt', 'cbrt')'''
@@ -20,7 +29,6 @@ def create_hist(data, transform=None, title=None, xlabel=None):
 
 def create_scatter(x, y, title, xlabel, ylabel, file_name):
     '''This function creates a scatter plot and saves the plot as png on your device.'''
-
     fig, ax = plt.subplots(figsize=(8, 5))
     # create the scatter
     ax.scatter(x, y, color="orange", alpha=0.5)
@@ -50,7 +58,7 @@ def CorrMtx(df, dropDuplicates=True, xrot=70, yrot=0, label='Variable'):
     sns.set_style(style='white')
 
     # Set up  matplotlib figure
-    f, ax = plt.subplots(figsize=(12, 10))
+    fig, ax = plt.subplots(figsize=(12, 10))
 
     # Add diverging colormap from red to blue
     cmap = sns.diverging_palette(250, 10, as_cmap=True)
@@ -86,6 +94,25 @@ def get_pairs(data, row_groups, depended, features, n, fig_name):
     for ind in row_groups:
         plot = sns.pairplot(x_vars=ind, y_vars=depended,
                             data=data, kind="reg", height=3)
+        plt.savefig(f"{fig_name}_{ind}.png")
     # save the file
-    plt.savefig(f"{fig_name}.png')
+
+    return
+
+
+def checkresiduals(df, target, sm_model):
+    ''' This function checks the model's homoscedasticity of a dataframe and saves the plot'''
+    # checking for our model - Homoscedasticity,  Independence of residuals
+    pred_val = sm_model.fittedvalues.copy()
+    true_val = df[target].values.copy()
+    residual = true_val - pred_val
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+#   fig, ax = plt.subplots(figsize=(8, 6))
+    ax1.hist(residual, density=True, bins=30)
+    ax2.scatter(df[target], residual)
+    ax1.set_title('Residual Histogram')
+    ax2.set_title('Residual Scatterplot')
+    plt.savefig(f"Residual Scatterplot.png")
+    plt.show()
     return
