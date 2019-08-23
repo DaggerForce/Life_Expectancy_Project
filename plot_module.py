@@ -17,6 +17,7 @@ def create_hist(data, transform=None, title=None, xlabel=None):
     elif transform == 'cube':
         data = np.cbrt(data)
     # create the plot
+
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.hist(data, density=True)
     # add the labels
@@ -25,7 +26,6 @@ def create_hist(data, transform=None, title=None, xlabel=None):
     ax.set_xlabel(xlabel)
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-    plt.show
     return
 
 
