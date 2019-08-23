@@ -31,7 +31,7 @@ def create_scatter(x, y, title, xlabel, ylabel):
     '''This function creates a scatter plot and saves the plot as png on your device.'''
     fig, ax = plt.subplots(figsize=(8, 5))
     # create the scatter
-    ax.scatter(x, y, color="orange", alpha=0.5)
+    ax.scatter(x, y, color="gray", alpha=0.5)
 
     # adds a title and axes labels
     ax.set_title(title)
