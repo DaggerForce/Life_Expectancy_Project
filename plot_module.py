@@ -27,7 +27,7 @@ def create_hist(data, transform=None, title=None, xlabel=None):
     return
 
 
-def create_scatter(x, y, title, xlabel, ylabel, file_name):
+def create_scatter(x, y, title, xlabel, ylabel):
     '''This function creates a scatter plot and saves the plot as png on your device.'''
     fig, ax = plt.subplots(figsize=(8, 5))
     # create the scatter
@@ -41,7 +41,6 @@ def create_scatter(x, y, title, xlabel, ylabel, file_name):
     # removing top and right borders
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-    plt.savefig(f'{file_name}.png')
     return
 
 
@@ -74,7 +73,6 @@ def CorrMtx(df, dropDuplicates=True, xrot=70, yrot=0, label='Variable'):
         plt.ylabel(label)
         plt.xticks(rotation=xrot)
         plt.yticks(rotation=yrot)
-        plt.savefig('heatmap.png')
 
     else:
         sns.heatmap(df, cmap=cmap,
@@ -84,7 +82,6 @@ def CorrMtx(df, dropDuplicates=True, xrot=70, yrot=0, label='Variable'):
         plt.ylabel(label)
         plt.xticks(rotation=xrot)
         plt.yticks(rotation=yrot)
-        plt.savefig('heatmap.png')
     return
 
 
