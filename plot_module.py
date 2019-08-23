@@ -17,12 +17,12 @@ def create_hist(data, transform=None, title=None, xlabel=None):
     elif transform == 'cube':
         data = np.cbrt(data)
     # create the plot
-    plt.figure(figsize=(8, 5))
-    plt.hist(data, density=True)
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.hist(data, density=True)
     # add the labels
-    plt.title(title)
-    plt.ylabel('Frequency')
-    plt.xlabel(xlabel)
+    ax.set_title(title)
+    ax.set_ylabel('Frequency')
+    ax.set_xlabel(xlabel)
     plt.show
     return
 
