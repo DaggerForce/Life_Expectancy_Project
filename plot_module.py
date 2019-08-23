@@ -23,6 +23,8 @@ def create_hist(data, transform=None, title=None, xlabel=None):
     ax.set_title(title)
     ax.set_ylabel('Frequency')
     ax.set_xlabel(xlabel)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
     plt.show
     return
 
