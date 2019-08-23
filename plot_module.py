@@ -31,7 +31,7 @@ def create_scatter(x, y, title, xlabel, ylabel):
     '''This function creates a scatter plot and saves the plot as png on your device.'''
     fig, ax = plt.subplots(figsize=(8, 5))
     # create the scatter
-    ax.scatter(x, y, color="gray", alpha=0.5)
+    ax.scatter(x, y, color="black", alpha=0.5)
 
     # adds a title and axes labels
     ax.set_title(title)
@@ -111,6 +111,5 @@ def checkresiduals(df, target, sm_model):
     ax2.scatter(df[target], residual)
     ax1.set_title('Residual Histogram')
     ax2.set_title('Residual Scatterplot')
-    plt.savefig(f"Residual Scatterplot.png")
     plt.show()
     return
