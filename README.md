@@ -25,20 +25,22 @@ The dataset was was collected from "WHO" and the United Nations website by Deeks
 
 ## Technical Description
 
-To achieve our goal we utilized, [Pandas](https://pandas.pydata.org/pandas-docs/stable/index.html/ "Pandas") to clean and explore the data. Additionally, we used [Numpy](https://www.numpy.org/ "Numpy"), [Scipy](https://www.numpy.org/ "Scipy") and [Sklearn](https://scikit-learn.org/stable/ "Sklearn") for data analysis.
+To increase collaboration efficiency we created a GitHub repository; this allowed us to work uninterrupted, simultaneously, and independently.
+
+To achieve the goal we utilized, [Pandas](https://pandas.pydata.org/pandas-docs/stable/index.html/ "Pandas") to clean and explore the data. Additionally, we used [Numpy](https://www.numpy.org/ "Numpy"), [Scipy](https://www.numpy.org/ "Scipy"), and [Sklearn](https://scikit-learn.org/stable/ "Sklearn") for data analysis.
 
 To increase collaboration efficiency we created a [GitHub](https://github.com/DaggerForce/Life_Expectancy_Project/ "GitHub") repository; this allowed us to work uninterrupted, simultaneously, and independently.
 
 The majority of our code was written in Jupyter Notebooks using Python. Furthermore, we used [VSCode](https://code.visualstudio.com/ "VSCode") to a module that contains our helper functions
 
-Initially we assessed which predictors could have the greatest influence on life expectancy from our dataset. Additionally, we created 4 more features that we suspected could effect life expectancy.
+Initially, we assessed which predictors could have the greatest influence on life expectancy from our dataset. Additionally, we created 4 more features that we suspected could affect life expectancy.
 
 1. Population Size - We divided our countries into three catagories; Small, Medium, and Large.
 2. Lifestyle - We created an interaction between alcohol consumption and BMI
 3. Economy - The interaction between the population and the GDP.
 4. Death ratio - The ratio between adult and child mortality.
 
-Despite the fact we had a decent sized dataset, it was largely fragmanted. We chose to remove all the fragmanted observations for columns we suspected could have a significant effect over life expectancy.
+Despite the fact we had a decent sized dataset, it was largely fragmented. We chose to remove all the fragmented observations for columns we suspected could have a significant effect on life expectancy.
 
 ## Workflow
 
@@ -87,8 +89,4 @@ In addition to dramas not being most popular they also did not bring in the most
 This was just an initial scope. Our recommendation is focused more on what content not to create, dramatic cinema. The market is saturated and these movies and those movies are not the most so popular among viewers.
 
 If an immediate decision has to be made, we would recommend filming an action/adventure movie, based on a comic series or book.
-
-#### DB Schema
-
-<img src=Images/db_schema.JPG alt="DB Schema" width="450"/>
 
