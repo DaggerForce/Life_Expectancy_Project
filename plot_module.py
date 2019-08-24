@@ -17,13 +17,15 @@ def create_hist(data, transform=None, title=None, xlabel=None):
     elif transform == 'cube':
         data = np.cbrt(data)
     # create the plot
-    plt.figure(figsize=(8, 5))
-    plt.hist(data, density=True)
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.hist(data, density=True)
     # add the labels
-    plt.title(title)
-    plt.ylabel('Frequency')
-    plt.xlabel(xlabel)
-    plt.show
+    ax.set_title(title)
+    ax.set_ylabel('Frequency')
+    ax.set_xlabel(xlabel)
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
     return
 
 
@@ -31,7 +33,7 @@ def create_scatter(x, y, title, xlabel, ylabel):
     '''This function creates a scatter plot and saves the plot as png on your device.'''
     fig, ax = plt.subplots(figsize=(8, 5))
     # create the scatter
-    ax.scatter(x, y, color="orange", alpha=0.5)
+    ax.scatter(x, y, color="blue", alpha=0.3)
 
     # adds a title and axes labels
     ax.set_title(title)
@@ -111,6 +113,5 @@ def checkresiduals(df, target, sm_model):
     ax2.scatter(df[target], residual)
     ax1.set_title('Residual Histogram')
     ax2.set_title('Residual Scatterplot')
-    plt.savefig(f"Residual Scatterplot.png")
     plt.show()
     return

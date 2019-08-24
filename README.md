@@ -1,57 +1,54 @@
 # Life Expectancy
 
-## Goal:
+In this project, we perform multiple linear regression to find the key features to affect life expectancy in different countries.
+
+## Goal
 
 Finding which public health factors have the most significant impact on life expectancy by country
 
 ## Data Sources:
 
-The dataset was was collected from "WHO" and United Nations website by Deeksha Russell and Duan Wang and is now stored on [Kaggle](https://www.kaggle.com/kumarajarshi/life-expectancy-who "Kaggle"). 
+The dataset was was collected from "WHO" and the United Nations website by Deeksha Russell and Duan Wang and is now stored on [Kaggle](https://www.kaggle.com/kumarajarshi/life-expectancy-who "Kaggle"). It contains 2939 observations about different countries between the years 2000 and 2015.
 
+| Data                     | Data                             |
+| ------------------------ | -------------------------------- |
+| Country                  | HIV\AIDS                         |
+| Year                     | Hepatitis B                      |
+| Life expectancy          | Polio                            |
+| Adult mortality          | Diphtheria                       |
+| Infant mortality         | GDP                              |
+| Alcohol consumpton       | Population                       |
+| Expenditre on hleath (%) | Prevalence for malnutrition 1-19 |
+| Measles                  | Prevalence for malnutrition 5-9  |
+| BMI                      | Education                        |
+| Status                   | Total expenditre on health       |
 
-| Data               | Data                             |
-| ------------------ | -------------------------------- |
-| Country            | HIV\AIDS                         |
-| Year               | Hepatitis B                      |
-| Life expectancy    | Polio                            |
-| Adult mortality    | Diphtheria                       |
-| Infant mortality   | GDP                              |
-| Alcohol consumpton | Population                       |
-| Health expenditre  | Prevalence for malnutrition 1-19 |
-| Measles            | Prevalence for malnutrition 5-9  |
-| BMI                | Education                        |
+## Technical Description
 
-## Technical Description:
-
-To achieve our goal we utilized, [Pandas](https://pandas.pydata.org/pandas-docs/stable/index.html/ "Pandas") to clean and explore the data. Additionally, we used Numpy, Statsmodel and Sklearn for data analysis.
+To achieve our goal we utilized, [Pandas](https://pandas.pydata.org/pandas-docs/stable/index.html/ "Pandas") to clean and explore the data. Additionally, we used [Numpy](https://www.numpy.org/ "Numpy"), [Scipy](https://www.numpy.org/ "Scipy") and [Sklearn](https://scikit-learn.org/stable/ "Sklearn") for data analysis.
 
 To increase collaboration efficiency we created a [GitHub](https://github.com/DaggerForce/Life_Expectancy_Project/ "GitHub") repository; this allowed us to work uninterrupted, simultaneously, and independently.
 
 The majority of our code was written in Jupyter Notebooks using Python. Furthermore, we used [VSCode](https://code.visualstudio.com/ "VSCode") to a module that contains our helper functions
 
-# Methodology
+Initially we assessed which predictors could have the greatest influence on life expectancy from our dataset. Additionally, we created 4 more features that we suspected could effect life expectancy.
 
-## Define Success
+1. Population Size - We divided our countries into three catagories; Small, Medium, and Large.
+2. Lifestyle - We created an interaction between alcohol consumption and BMI
+3. Economy - The interaction between the population and the GDP.
+4. Death ratio - The ratio between adult and child mortality.
 
-Definition: "the attainment of popularity or profit".
-
-We defined success by focusing mainly on popularity. Followed by raising questions such as:
-
-1. Are some genres more popular than others?
-2. Which directors create the most popular movies?
-3. Which movie genre creates the most revenue?
+Despite the fact we had a decent sized dataset, it was largely fragmanted. We chose to remove all the fragmanted observations for columns we suspected could have a significant effect over life expectancy.
 
 ## Workflow
 
-* Create AWS RDS Instance
-* Create [DB Schema](#DB-Schema)
-* Populate Tables
-  * Gather data using [OMDb's](http://www.omdbapi.com/ "OMDb") and [TMDb's](https://www.themoviedb.org/?language=en-US "TMDb") own APIs
-  * Clean data using Python to extract only what we might need.
-* Data Analyses
-  * Extract the relevant data using MySQL queries
-  * Create visuals using [Matplotlib](https://matplotlib.org/ "Matplotlib")
-  * Reach meaningful [conclusions](#Take-Home-Message)
+* Raise a question - Which public health factors have the greatest impact on life expectancy by country? 
+* Explore the Dataset
+  * Add Features
+  * Clean the Dataset
+* Model
+* Test Models
+* Predict Life Expectancy
   
 ## Results
 
