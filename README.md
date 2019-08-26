@@ -48,11 +48,11 @@ Initially, we assessed which predictors could have the greatest influence on lif
 
 We began by removing all the fragmented observations from the dataset. We then checked for a possible relationship between life expectancy and all of the different features. After picking the features we wanted to include, we transformed some of them; to achieve a more linear relationship and a more normally distributed data.
 
-<img src=Images/before_after_transform.JPG alt="Before and after GDP log transformation historgram" width="450"/>
+<img src=Images/before_after_transform.jpg alt="Before and after GDP log transformation historgram" width="450"/>
 
 We proceeded by searching for multicollinearity between the selected predictors by creating a correlation matrix. We defined multicollinearity cut-off at 0.8 and omitted alcohol consumption and GDP from the initial model.
 
-![HeatMap](Images/heatmap.PNG)
+![HeatMap](Images/heatmap.png)
 
 We then proceeded to remove possible outliers by looking at their scatter plots and removed the observations we deemed as unusual. After removing the outliers, 1635 observations remained in the dataset.
 
