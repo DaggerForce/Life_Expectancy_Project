@@ -9,8 +9,8 @@ The overhead goal for this project is to find _which public health factors have 
   * [Add Features](#new-features)
   * [Clean the Dataset](#cleaning-the-data)
 * [Create Models](#results)
-* Test Models
-* Predict Life Expectancy
+* [Test Models](#train-test-split)
+* [Recommendation](#take-home-message)
 
 
 ## Data Sources
@@ -79,6 +79,7 @@ We conducted a train, test split test using 80% of our data to predict the other
 
 <img src=Images/model_final.png alt="Train test split model" width="450"/>
 
+### Train Test Split
 Additionally, we tested the model with all the features we previously excluded (BMI, alcohol, GDP, and population size). Expectedly, the model mean absolute error is slightly smaller (2.995). However, the deviation is still in years meaning the model has to be refined.
 
 <img src=Images/model_all.png alt="Train test split model" width="450"/>
