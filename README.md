@@ -56,10 +56,10 @@ We proceeded by searching for multicollinearity between the selected predictors 
 
 We then proceeded to remove possible outliers by looking at their scatter plots and removed the observations we deemed as unusual. After removing the outliers, 1635 observations remained in the dataset.
 
-<img src=Images/paired_before_lifestyle.png alt="Scatter Before removing outliers" width="450"/>
+<img src=Images/paired_before_lifestyle.png alt="Scatter Before removing outliers" width="350"/>
 
 
-<img src=Images/paired_afte_lifestyle.png alt="Scatter Before removing outliers" width="450"/>
+<img src=Images/paired_afte_lifestyle.png alt="Scatter Before removing outliers" width="350"/>
 
 ## Results
 
