@@ -50,23 +50,21 @@ def CorrMtx(df, dropDuplicates=True, xrot=70, yrot=0, label='Variable'):
     '''This function accepts a correlation matrix of your data, returns a heat map and save
        the plot on your device'''
 
-    # Exclude duplicate correlations by masking uper right values
+    # exclude duplicate correlations by masking uper right values
     if dropDuplicates:
         mask = np.zeros_like(df, dtype=np.bool)
         mask[np.triu_indices_from(mask)] = True
 
-    # Set background color / chart style
+    # set background color / chart style
     sns.set_style(style='white')
-
-    # Set up  matplotlib figure
     fig, ax = plt.subplots(figsize=(12, 10))
 
-    # Add diverging colormap from red to blue
+    # add diverging colormap from red to blue
     cmap = sns.diverging_palette(250, 10, as_cmap=True)
     # add titles
     plt.title("Correlation Heat Map")
 
-    # Draw correlation plot with or without duplicates
+    # draw correlation plot with or without duplicates
     if dropDuplicates:
         sns.heatmap(df, mask=mask, cmap=cmap,
                     square=True,
