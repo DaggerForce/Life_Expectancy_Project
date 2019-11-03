@@ -85,11 +85,15 @@ def CorrMtx(df, dropDuplicates=True, xrot=70, yrot=0, label='Variable'):
     return
 
 
-def get_pairs(data, depended, features, n, fig_name=None):
+def get_pairs(data, dependent, features, n, fig_name=None):
+    '''This function accepts a dataframe, the dependent variable name, list of feature names,
+       number of plots per row and an optional figure name for saving the figure
+    '''
+    
     row_groups = [features[i:i+n] for i in range(0, len(features), n)]
     # create the plots
     for ind in row_groups:
-        plot = sns.pairplot(x_vars=ind, y_vars=depended,
+        plot = sns.pairplot(x_vars=ind, y_vars=dependent,
                             data=data, kind="reg", height=3)
         if fig_name:
             plt.savefig(f"{fig_name}_{ind}.png")
